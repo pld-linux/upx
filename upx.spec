@@ -8,7 +8,9 @@ Group:		Applications
 Group(de):	Applikationen
 Group(pl):	Aplikacje
 Source0:	http://wildsau.idv.uni-linz.ac.at/mfx/download/upx/%{name}-%{version}-src.tar.gz
+Patch0:		%{name}-opt.patch
 URL:		http://upx.tsx.org
+BuildRequires:	glibc-static
 BuildRequires:	ucl-devel
 Exclusivearch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -30,13 +32,14 @@ wa¿nych dla bezpieczeñstwa systemu. Do pracy wymaga dostêpu do systemu
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 
 cd doc
-%{__make}
+%{__make} CFLAGS_O="$RPM_OPT_FLAGS"
 cd ../src
-%{__make} 
+%{__make} CFLAGS_O="$RPM_OPT_FLAGS"
 cd ..
 
 %install
