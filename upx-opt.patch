@@ -1,20 +1,18 @@
---- upx-1.04/src/Makefile~	Tue Dec 19 21:30:17 2000
-+++ upx-1.04/src/Makefile	Tue Dec 26 00:12:24 2000
-@@ -93,7 +93,7 @@
- ###
- 
- ##CFLAGS_O  = -Os
--CFLAGS_O  = -O2
-+#CFLAGS_O  = -O2
- ##CFLAGS_WERROR = -Werror
+diff -Nur upx-1.20.orig/src/Makefile upx-1.20/src/Makefile
+--- upx-1.20.orig/src/Makefile	Wed May 23 16:56:13 2001
++++ upx-1.20/src/Makefile	Sat Jul  7 05:05:59 2001
+@@ -111,12 +111,12 @@
+ CFLAGS_WERROR =
  CFLAGS_W  = $(CFLAGS_WERROR)
  CFLAGS_W += -Wall -W -Wcast-align -Wcast-qual -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wwrite-strings
-@@ -177,7 +177,7 @@
- e =
- DEFS += '-DUPX_CONFIG_H="config_h/linux.h"'
- CFLAGS_M += -mno-schedule-prologue
--CFLAGS_M += -march=i386 -mcpu=pentium
-+CFLAGS_M += -march=i386
- CFLAGS_WERROR = -Werror
- LDLIBS += -lmcheck
+-CFLAGS_M  =
++CFLAGS_M  = -march=i386
+ ##CFLAGS_M += -fno-builtin
+ ##CFLAGS_M += -malign-functions=0 -malign-jumps=0 -malign-loops=0
+ ##CFLAGS_O  = -Os -fstrict-aliasing
+ ##CFLAGS_O  = -O2 -fstrict-aliasing
+-CFLAGS_O  = -O2 -fno-strict-aliasing
++#CFLAGS_O  = -O2 -fno-strict-aliasing
  
+ CFLAGS    = $(CFLAGS_W) $(CFLAGS_M) $(CFLAGS_O)
+ CXXFLAGS  = $(CFLAGS) -Wsynth -fconserve-space
