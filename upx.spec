@@ -11,9 +11,9 @@ Patch0:		%{name}-opt.patch
 Patch1:		%{name}-ucl.patch
 URL:		http://upx.sourceforge.net/
 BuildRequires:	glibc-static
-BuildRequires:	ucl-devel >= 1.01
 BuildRequires:	libstdc++-devel
-Exclusivearch:	%{ix86}
+BuildRequires:	ucl-devel >= 1.01
+ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -37,13 +37,10 @@ wa¿nych dla bezpieczeñstwa systemu. Do pracy wymaga dostêpu do systemu
 %patch1 -p1
 
 %build
-cd doc
-%{__make} CFLAGS_O="%{rpmcflags}"
-cd ../src
-%{__make} \
+%{__make} -C doc
+%{__make} -C src \
 	CFLAGS_O="%{rpmcflags}" \
 	CC="%{__cxx}"
-cd ..
 
 %install
 rm -rf $RPM_BUILD_ROOT
