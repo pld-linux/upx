@@ -38,7 +38,9 @@ wa¿nych dla bezpieczeñstwa systemu. Do pracy wymaga dostêpu do systemu
 cd doc
 %{__make} CFLAGS_O="%{rpmcflags}"
 cd ../src
-%{__make} CFLAGS_O="%{rpmcflags}"
+%{__make} \
+	CFLAGS_O="%{rpmcflags}" \
+	CC="%{__cxx}"
 cd ..
 
 %install
