@@ -13,7 +13,6 @@ URL:		http://upx.sourceforge.net/
 BuildRequires:	glibc-static
 BuildRequires:	libstdc++-devel
 BuildRequires:	ucl-devel >= 1.01
-ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
