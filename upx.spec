@@ -48,10 +48,7 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 install doc/upx.1 $RPM_BUILD_ROOT%{_mandir}/man1
 install src/upx $RPM_BUILD_ROOT%{_bindir}
 
-gzip -9nf BUGS LICENSE NEWS PROJECTS README README.SRC THANKS 
-
-%post   
-%postun 
+gzip -9nf BUGS LICENSE NEWS PROJECTS README README.SRC THANKS
 
 %clean
 rm -rf $RPM_BUILD_ROOT
