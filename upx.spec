@@ -1,12 +1,12 @@
 Summary:	The Ultimate Packer for eXecutables
 Summary(pl):	Program pakuj±cy pliki wykonywalne
 Name:		upx
-Version:	1.24
+Version:	1.25
 Release:	1
 License:	GPL
 Group:		Applications
 Source0:	http://upx.sourceforge.net/download/%{name}-%{version}-src.tar.gz
-# Source0-md5:	c7addf22766bdc9878e0a191855eec16
+# Source0-md5:	6f20a62999a46a1864652454b3c8a5d8
 Patch0:		%{name}-opt.patch
 Patch1:		%{name}-ucl.patch
 URL:		http://upx.sourceforge.net/
@@ -32,14 +32,17 @@ wa¿nych dla bezpieczeñstwa systemu. Do pracy wymaga dostêpu do systemu
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
+#%patch0 -p1
+#%patch1 -p1
 
 %build
 %{__make} -C doc
 %{__make} -C src \
+	CCARCH="" \
 	CFLAGS_O="%{rpmcflags}" \
-	CC="%{__cxx}"
+	CC="%{__cc}" \
+	CXX="%{__cxx}" \
+	UCLDIR="%{_prefix}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
