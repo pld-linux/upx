@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		Applications
 Source0:	http://upx.sourceforge.net/download/%{name}-%{version}-src.tar.gz
+# Source0-md5:	c7addf22766bdc9878e0a191855eec16
 Patch0:		%{name}-opt.patch
 Patch1:		%{name}-ucl.patch
 URL:		http://upx.sourceforge.net/
