@@ -1,7 +1,7 @@
 Summary:	The Ultimate Packer for eXecutables
 Summary(pl):	Program pakuj±cy pliki wykonywalne
 Name:		upx
-Version:	1.02
+Version:	1.04
 Release:	1
 License:	GPL
 Group:		Applications
