@@ -12,7 +12,7 @@ Patch1:		%{name}-ucl.patch
 URL:		http://upx.sourceforge.net/
 BuildRequires:	glibc-static
 BuildRequires:	ucl-devel >= 1.01
-BuildRequires:  libstdc++-devel
+BuildRequires:	libstdc++-devel
 Exclusivearch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
