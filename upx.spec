@@ -1,16 +1,16 @@
 Summary:	The Ultimate Packer for eXecutables
 Summary(pl):	Program pakuj±cy pliki wykonywalne
 Name:		upx
-Version:	1.20
+Version:	1.24
 Release:	1
 License:	GPL
 Group:		Applications
-Source0:	http://wildsau.idv.uni-linz.ac.at/mfx/download/upx/%{name}-%{version}-src.tar.gz
+Source0:	http://upx.sourceforge.net/download/%{name}-%{version}-src.tar.gz
 Patch0:		%{name}-opt.patch
 Patch1:		%{name}-ucl.patch
-URL:		http://upx.tsx.org
+URL:		http://upx.sourceforge.net/
 BuildRequires:	glibc-static
-BuildRequires:	ucl-devel
+BuildRequires:	ucl-devel >= 1.01
 Exclusivearch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -48,13 +48,11 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 install doc/upx.1 $RPM_BUILD_ROOT%{_mandir}/man1
 install src/upx $RPM_BUILD_ROOT%{_bindir}
 
-gzip -9nf BUGS LICENSE NEWS PROJECTS README README.SRC THANKS
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc BUGS LICENSE NEWS PROJECTS README README.SRC THANKS
 %attr(755,root,root) %{_bindir}/upx
 %{_mandir}/man1/upx.1*
