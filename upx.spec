@@ -10,7 +10,7 @@ Group(pl):	Aplikacje
 Source0:	http://wildsau.idv.uni-linz.ac.at/mfx/download/upx/%{name}-%{version}-src.tar.gz
 URL:		http://upx.tsx.org
 BuildRequires:	ucl-devel
-Exclusivearch:  %{ix86}
+Exclusivearch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
