@@ -1,7 +1,7 @@
 Summary:	The Ultimate Packer for eXecutables
 Summary(pl):	Program pakuj±cy pliki wykonywalne
 Name:		upx
-Version:	1.07
+Version:	1.20
 Release:	1
 License:	GPL
 Group:		Applications
@@ -9,6 +9,7 @@ Group(de):	Applikationen
 Group(pl):	Aplikacje
 Source0:	http://wildsau.idv.uni-linz.ac.at/mfx/download/upx/%{name}-%{version}-src.tar.gz
 Patch0:		%{name}-opt.patch
+Patch1:		%{name}-ucl.patch
 URL:		http://upx.tsx.org
 BuildRequires:	glibc-static
 BuildRequires:	ucl-devel
@@ -33,9 +34,9 @@ wa¿nych dla bezpieczeñstwa systemu. Do pracy wymaga dostêpu do systemu
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
-
 cd doc
 %{__make} CFLAGS_O="%{rpmcflags}"
 cd ../src
