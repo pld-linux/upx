@@ -19,3 +19,15 @@ diff -Nur upx-1.20.orig/src/Makefile upx-1.20/src/Makefile
  LIBDIRS =
  DOS_LDLIBS =
  DOS_LIBDIRS =
+diff -ruN upx-1.24./src/conf.h upx-1.24/src/conf.h
+--- upx-1.24./src/conf.h	2002-10-14 20:53:00.000000000 +0200
++++ upx-1.24/src/conf.h	2004-01-20 21:36:04.105937784 +0100
+@@ -109,7 +109,7 @@
+ #    define UPX_E_OK      UCL_E_OK
+ #    define UPX_E_ERROR   UCL_E_ERROR
+ #    define UPX_E_OUT_OF_MEMORY UCL_E_OUT_OF_MEMORY
+-#    define __UPX_ENTRY   __UCL_ENTRY
++#    define __UPX_ENTRY   __UCL_CDECL
+ #  endif
+ #endif
+ #if defined(WITH_NRV)
