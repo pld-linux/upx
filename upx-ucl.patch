@@ -1,0 +1,21 @@
+diff -Nur upx-1.20.orig/src/Makefile upx-1.20/src/Makefile
+--- upx-1.20.orig/src/Makefile	Wed May 23 16:56:13 2001
++++ upx-1.20/src/Makefile	Sat Jul  7 11:07:54 2001
+@@ -118,7 +118,7 @@
+ ##CFLAGS_O  = -O2 -fstrict-aliasing
+ CFLAGS_O  = -O2 -fno-strict-aliasing
+ 
+-CFLAGS    = $(CFLAGS_W) $(CFLAGS_M) $(CFLAGS_O)
++CFLAGS    = -DWITH_UCL $(CFLAGS_W) $(CFLAGS_M) $(CFLAGS_O)
+ CXXFLAGS  = $(CFLAGS) -Wsynth -fconserve-space
+ CXXFLAGS1 = $(CXXFLAGS)
+ ##CXXFLAGS1 += -fasynchronous-exceptions
+@@ -135,7 +135,7 @@
+ LDFLAGS = -s
+ endif
+ LDFLAGS += -Wl,-Map,$T.map
+-LDLIBS =
++LDLIBS = -lucl
+ LIBDIRS =
+ DOS_LDLIBS =
+ DOS_LIBDIRS =
