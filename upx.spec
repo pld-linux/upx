@@ -7,8 +7,6 @@ License:	GPL
 Group:		Applications
 Source0:	http://upx.sourceforge.net/download/%{name}-%{version}-src.tar.gz
 # Source0-md5:	6f20a62999a46a1864652454b3c8a5d8
-Patch0:		%{name}-opt.patch
-Patch1:		%{name}-ucl.patch
 URL:		http://upx.sourceforge.net/
 BuildRequires:	glibc-static
 BuildRequires:	libstdc++-devel
@@ -32,8 +30,6 @@ wa¿nych dla bezpieczeñstwa systemu. Do pracy wymaga dostêpu do systemu
 
 %prep
 %setup -q
-#%patch0 -p1
-#%patch1 -p1
 
 %build
 %{__make} -C doc
