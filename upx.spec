@@ -37,9 +37,9 @@ wa¿nych dla bezpieczeñstwa systemu. Do pracy wymaga dostêpu do systemu
 %build
 
 cd doc
-%{__make} CFLAGS_O="%{?debug:-O -g}%{!?debug:$RPM_OPT_FLAGS}"
+%{__make} CFLAGS_O="%{?debug:-O0 -g}%{!?debug:$RPM_OPT_FLAGS}"
 cd ../src
-%{__make} CFLAGS_O="%{?debug:-O -g}%{!?debug:$RPM_OPT_FLAGS}"
+%{__make} CFLAGS_O="%{?debug:-O0 -g}%{!?debug:$RPM_OPT_FLAGS}"
 cd ..
 
 %install
