@@ -1,0 +1,20 @@
+--- upx-1.04/src/Makefile~	Tue Dec 19 21:30:17 2000
++++ upx-1.04/src/Makefile	Tue Dec 26 00:12:24 2000
+@@ -93,7 +93,7 @@
+ ###
+ 
+ ##CFLAGS_O  = -Os
+-CFLAGS_O  = -O2
++#CFLAGS_O  = -O2
+ ##CFLAGS_WERROR = -Werror
+ CFLAGS_W  = $(CFLAGS_WERROR)
+ CFLAGS_W += -Wall -W -Wcast-align -Wcast-qual -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wwrite-strings
+@@ -177,7 +177,7 @@
+ e =
+ DEFS += '-DUPX_CONFIG_H="config_h/linux.h"'
+ CFLAGS_M += -mno-schedule-prologue
+-CFLAGS_M += -march=i386 -mcpu=pentium
++CFLAGS_M += -march=i386
+ CFLAGS_WERROR = -Werror
+ LDLIBS += -lmcheck
+ 
