@@ -5,8 +5,6 @@ Version:	1.20
 Release:	1
 License:	GPL
 Group:		Applications
-Group(de):	Applikationen
-Group(pl):	Aplikacje
 Source0:	http://wildsau.idv.uni-linz.ac.at/mfx/download/upx/%{name}-%{version}-src.tar.gz
 Patch0:		%{name}-opt.patch
 Patch1:		%{name}-ucl.patch
