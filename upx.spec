@@ -37,14 +37,15 @@ wa¿nych dla bezpieczeñstwa systemu. Do pracy wymaga dostêpu do systemu
 %build
 
 cd doc
-%{__make} CFLAGS_O="$RPM_OPT_FLAGS"
+%{__make} CFLAGS_O="%{?debug:-O -g}%{!?debug:$RPM_OPT_FLAGS}"
 cd ../src
-%{__make} CFLAGS_O="$RPM_OPT_FLAGS"
+%{__make} CFLAGS_O="%{?debug:-O -g}%{!?debug:$RPM_OPT_FLAGS}"
 cd ..
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
+
 install doc/upx.1 $RPM_BUILD_ROOT%{_mandir}/man1
 install src/upx $RPM_BUILD_ROOT%{_bindir}
 
@@ -58,6 +59,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc *.gz
 %attr(755,root,root) %{_bindir}/upx
 %{_mandir}/man1/upx.1*
-%doc {BUGS,LICENSE,NEWS,PROJECTS,README,README.SRC,THANKS}.gz
