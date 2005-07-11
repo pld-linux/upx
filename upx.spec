@@ -14,19 +14,19 @@ BuildRequires:	ucl-devel >= 1.01
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-UPX is an advenced executable file compressor. UPX will typically
-reduce the file size of programs by around 50%-70%. Note that UPX need
-decompress program file before run, what request some space on /tmp.
-You shouldn't compress suid guid and some others "strategy" for
-security programs. UPX need access to /proc filesystem.
+UPX is an advanced executable file compressor. UPX will typically
+reduce the file size of programs by around 50%-70%. Note that UPX
+needs to decompress the program file before run, what request some
+space in /tmp. You shouldn't compress suid guid and some others
+"strategic" for security programs. UPX needs access to the /proc
+filesystem.
 
 %description -l pl
 UPX jest zaawansowanym kompresorem plików wykonywalnych. Zazwyczaj
-zmniejsza wielko¶æ programów o oko³o 50%-70%. UPX wymaga dekompresji
-programu przed uruchomieniem, co wymaga trochê miejsca na /tmp. Nie
-powiniene¶ nim kompresowaæ programów maj±cych suid, guid i innych
-wa¿nych dla bezpieczeñstwa systemu. Do pracy wymaga dostêpu do systemu
-/proc
+zmniejsza wielko¶æ programów o oko³o 50%-70%. UPX dekompresuje program
+przed uruchomieniem, co wymaga trochê miejsca w /tmp. Nie powiniene¶
+nim kompresowaæ programów maj±cych suid, guid i innych wa¿nych dla
+bezpieczeñstwa systemu. Do pracy wymaga dostêpu do systemu /proc
 
 %prep
 %setup -q
