@@ -1,12 +1,15 @@
+%define		snap 20050917
+#
 Summary:	The Ultimate Packer for eXecutables
 Summary(pl):	Program pakuj±cy pliki wykonywalne
 Name:		upx
-Version:	1.25
-Release:	1
+Version:	1.93
+Release:	0.%{snap}.1
 License:	GPL
 Group:		Applications
-Source0:	http://upx.sourceforge.net/download/%{name}-%{version}-src.tar.gz
-# Source0-md5:	6f20a62999a46a1864652454b3c8a5d8
+#Source0:	http://upx.sourceforge.net/download/%{name}-%{version}-src.tar.gz
+Source0:	%{name}-%{version}-%{snap}.tar.bz2
+# Source0-md5:	a38535c32fa979ff7c79ca753b9024fa
 URL:		http://upx.sourceforge.net/
 BuildRequires:	glibc-static
 BuildRequires:	libstdc++-devel
@@ -29,7 +32,7 @@ nim kompresowaæ programów maj±cych suid, guid i innych wa¿nych dla
 bezpieczeñstwa systemu. Do pracy wymaga dostêpu do systemu /proc
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}-%{snap}
 
 %build
 %{__make} -C doc
@@ -45,13 +48,13 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
 install doc/upx.1 $RPM_BUILD_ROOT%{_mandir}/man1
-install src/upx $RPM_BUILD_ROOT%{_bindir}
+install src/upx.out $RPM_BUILD_ROOT%{_bindir}/upx
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc BUGS LICENSE NEWS PROJECTS README README.SRC THANKS
+%doc BUGS LICENSE NEWS PROJECTS README README.SRC THANKS TODO
 %attr(755,root,root) %{_bindir}/upx
 %{_mandir}/man1/upx.1*
