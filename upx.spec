@@ -1,7 +1,7 @@
 %define		snap 20050917
 #
 Summary:	The Ultimate Packer for eXecutables
-Summary(pl):	Program pakuj±cy pliki wykonywalne
+Summary(pl.UTF-8):   Program pakujÄ…cy pliki wykonywalne
 Name:		upx
 Version:	1.93
 Release:	0.%{snap}.1
@@ -24,12 +24,12 @@ space in /tmp. You shouldn't compress suid guid and some others
 "strategic" for security programs. UPX needs access to the /proc
 filesystem.
 
-%description -l pl
-UPX jest zaawansowanym kompresorem plików wykonywalnych. Zazwyczaj
-zmniejsza wielko¶æ programów o oko³o 50%-70%. UPX dekompresuje program
-przed uruchomieniem, co wymaga trochê miejsca w /tmp. Nie powiniene¶
-nim kompresowaæ programów maj±cych suid, guid i innych wa¿nych dla
-bezpieczeñstwa systemu. Do pracy wymaga dostêpu do systemu /proc
+%description -l pl.UTF-8
+UPX jest zaawansowanym kompresorem plikÃ³w wykonywalnych. Zazwyczaj
+zmniejsza wielkoÅ›Ä‡ programÃ³w o okoÅ‚o 50%-70%. UPX dekompresuje program
+przed uruchomieniem, co wymaga trochÄ™ miejsca w /tmp. Nie powinieneÅ›
+nim kompresowaÄ‡ programÃ³w majÄ…cych suid, guid i innych waÅ¼nych dla
+bezpieczeÅ„stwa systemu. Do pracy wymaga dostÄ™pu do systemu /proc
 
 %prep
 %setup -q -n %{name}-%{version}-%{snap}
