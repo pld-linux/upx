@@ -1,5 +1,5 @@
 Summary:	The Ultimate Packer for eXecutables
-Summary(pl.UTF-8):   Program pakujący pliki wykonywalne
+Summary(pl.UTF-8):	Program pakujący pliki wykonywalne
 Name:		upx
 Version:	2.03
 Release:	1
