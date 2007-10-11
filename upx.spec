@@ -2,15 +2,17 @@ Summary:	The Ultimate Packer for eXecutables
 Summary(pl.UTF-8):	Program pakujący pliki wykonywalne
 Name:		upx
 Version:	3.00
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications
 Source0:	http://upx.sourceforge.net/download/%{name}-%{version}-src.tar.bz2
 # Source0-md5:	9edb9e1b563a8ef306060028460a13b7
+Source1:        http://dl.sourceforge.net/sevenzip/lzma443.tar.bz2
+# Source1-md5:  c4e1b467184c7cffd4371c74df2baf0f
 URL:		http://upx.sourceforge.net/
-BuildRequires:	glibc-static
 BuildRequires:	libstdc++-devel
 BuildRequires:	ucl-devel >= 1.01
+BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -29,7 +31,7 @@ nim kompresować programów mających suid, guid i innych ważnych dla
 bezpieczeństwa systemu. Do pracy wymaga dostępu do systemu /proc
 
 %prep
-%setup -q -n %{name}-%{version}-src
+%setup -q -n %{name}-%{version}-src -a1
 
 %build
 %{__make} -C doc
@@ -38,7 +40,8 @@ bezpieczeństwa systemu. Do pracy wymaga dostępu do systemu /proc
 	CFLAGS_O="%{rpmcflags}" \
 	CC="%{__cc}" \
 	CXX="%{__cxx}" \
-	UCLDIR="%{_prefix}"
+	UCLDIR="%{_prefix}" \
+	UPX_LZMADIR="../"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -52,6 +55,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc BUGS LICENSE NEWS PROJECTS README README.SRC THANKS
+%doc BUGS LICENSE NEWS PROJECTS README README.1ST README.SRC THANKS
 %attr(755,root,root) %{_bindir}/upx
 %{_mandir}/man1/upx.1*
