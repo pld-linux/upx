@@ -1,14 +1,14 @@
 Summary:	The Ultimate Packer for eXecutables
 Summary(pl.UTF-8):	Program pakujący pliki wykonywalne
 Name:		upx
-Version:	3.00
-Release:	2
+Version:	3.01
+Release:	1
 License:	GPL
 Group:		Applications
 Source0:	http://upx.sourceforge.net/download/%{name}-%{version}-src.tar.bz2
-# Source0-md5:	9edb9e1b563a8ef306060028460a13b7
+# Source0-md5:	58f3c87bf7e067ece5f7c510d4423cb8
 Source1:        http://dl.sourceforge.net/sevenzip/lzma443.tar.bz2
-# Source1-md5:  c4e1b467184c7cffd4371c74df2baf0f
+# Source1-md5:	c4e1b467184c7cffd4371c74df2baf0f
 URL:		http://upx.sourceforge.net/
 BuildRequires:	libstdc++-devel
 BuildRequires:	ucl-devel >= 1.01
