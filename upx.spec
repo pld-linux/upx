@@ -2,7 +2,7 @@ Summary:	The Ultimate Packer for eXecutables
 Summary(pl.UTF-8):	Program pakujący pliki wykonywalne
 Name:		upx
 Version:	3.03
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Development/Tools
 Source0:	http://upx.sourceforge.net/download/%{name}-%{version}-src.tar.bz2
