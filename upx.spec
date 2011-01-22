@@ -7,10 +7,12 @@ License:	GPL v2+
 Group:		Development/Tools
 Source0:	http://upx.sourceforge.net/download/%{name}-%{version}-src.tar.bz2
 # Source0-md5:	8186ab103288242f7e8ecad1acd4af03
-Source1:        http://dl.sourceforge.net/sevenzip/lzma465.tar.bz2
+Source1:	http://downloads.sourceforge.net/sevenzip/lzma465.tar.bz2
 # Source1-md5:	29d5ffd03a5a3e51aef6a74e9eafb759
 URL:		http://upx.sourceforge.net/
 BuildRequires:	libstdc++-devel
+BuildRequires:	perl-base
+BuildRequires:	perl-tools-pod
 BuildRequires:	rpmbuild(macros) >= 1.167
 BuildRequires:	ucl-devel >= 1.01
 BuildRequires:	zlib-devel
