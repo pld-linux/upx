@@ -29,9 +29,10 @@ filesystem.
 %description -l pl.UTF-8
 UPX jest zaawansowanym kompresorem plików wykonywalnych. Zazwyczaj
 zmniejsza wielkość programów o około 50%-70%. UPX dekompresuje program
-przed uruchomieniem, co wymaga trochę miejsca w /tmp. Nie powinieneś
-nim kompresować programów mających suid, guid i innych ważnych dla
-bezpieczeństwa systemu. Do pracy wymaga dostępu do systemu /proc
+przed uruchomieniem, co wymaga trochę miejsca w /tmp. Nie należy nim
+kompresować programów mających suid, guid oraz innych ważnych dla
+bezpieczeństwa systemu. Do pracy wymaga dostępu do systemu plików
+/proc.
 
 %prep
 %setup -q -n %{name}-%{version}-src -a1
