@@ -1,20 +1,22 @@
 Summary:	The Ultimate Packer for eXecutables
 Summary(pl.UTF-8):	Program pakujący pliki wykonywalne
 Name:		upx
-Version:	3.91
+Version:	3.95
 Release:	1
 License:	GPL v2+
 Group:		Development/Tools
-Source0:	http://upx.sourceforge.net/download/%{name}-%{version}-src.tar.bz2
-# Source0-md5:	c6d0b3ea2ecb28cb8031d59a4b087a43
+Source0:	https://github.com/upx/upx/releases/download/v3.95/%{name}-%{version}-src.tar.xz
+# Source0-md5:	fa95336d9ddcaac3b494a1b6ae9d3557
 Source1:	http://downloads.sourceforge.net/sevenzip/lzma465.tar.bz2
 # Source1-md5:	29d5ffd03a5a3e51aef6a74e9eafb759
-URL:		http://upx.sourceforge.net/
+URL:		https://upx.github.io/
 BuildRequires:	libstdc++-devel
 BuildRequires:	perl-base
 BuildRequires:	perl-tools-pod
 BuildRequires:	rpmbuild(macros) >= 1.167
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	ucl-devel >= 1.01
+BuildRequires:	xz
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -52,8 +54,8 @@ bezpieczeństwa systemu. Do pracy wymaga dostępu do systemu plików
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
-install doc/upx.1 $RPM_BUILD_ROOT%{_mandir}/man1
-install src/upx.out $RPM_BUILD_ROOT%{_bindir}/upx
+cp -p doc/upx.1 $RPM_BUILD_ROOT%{_mandir}/man1
+install -p src/upx.out $RPM_BUILD_ROOT%{_bindir}/upx
 
 %clean
 rm -rf $RPM_BUILD_ROOT
